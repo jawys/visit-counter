@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function (req, res, next) {
   const counter = req.app.db.counter;
-  counter.findOneAndUpdate({ name }, { $inc: { count: 1 } }, function (err, count, abc) {
+  counter.findOneAndUpdate({ name: req.path }, { $inc: { count: 1 } }, function (err, count, abc) {
     console.log(err, count, abc);
     res.render('index', { title: 'Express', count });
   });
