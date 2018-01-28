@@ -8,7 +8,7 @@ router.get('/', async function (req, res, next) {
   if (!doc) {
     doc = await counter.create({ name: 'visits', count: 1 });
   }
-  res.render('index', { title: 'Express', visits: doc.count });
+  res.render('index', { title: 'Visit Counter', visits: doc.count });
 });
 
 module.exports = router;
