@@ -6,7 +6,7 @@ const counterSchema = mongoose.Schema({
 });
 
 counterSchema.static('updateCount', function (name, callback) {
-  return this.findAndUpdate({ name }, { $inc: { count: 1 } }, callback);
+  return this.findOneAndUpdate({ name }, { $inc: { count: 1 } }, callback);
 });
 
 module.exports = mongoose.model('Counter', counterSchema);
