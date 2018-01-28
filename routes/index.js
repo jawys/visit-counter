@@ -4,8 +4,8 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function (req, res, next) {
   const counter = req.app.db.counter;
-  counter.updateCount(req.path, function (count) {
-    console.log(count);
+  counter.updateCount(req.path, function (err, count) {
+    console.log(err, count);
   });
   res.render('index', { title: 'Express', count });
 });
