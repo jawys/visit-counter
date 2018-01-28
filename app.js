@@ -1,4 +1,4 @@
-import { mountDb } from './lib/db';
+const { mountDb } = require('./lib/db');
 
 var express = require('express');
 var path = require('path');
