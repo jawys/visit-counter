@@ -2,10 +2,7 @@ const mongoose = require('mongoose');
 
 const counterSchema = mongoose.Schema({
   name: String,
-  count: {
-    type: Number,
-    default: 0,
-  },
+  count: Number,
 });
 
 module.exports = mongoose.model('Counter', counterSchema);
