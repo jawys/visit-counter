@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 
 const counterSchema = mongoose.Schema({
   name: String,
-  count: Number,
+  count: {
+    type: Number,
+    default: 0,
+  },
 });
 
 counterSchema.static('updateCount', function (name, callback) {
