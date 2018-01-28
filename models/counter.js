@@ -8,10 +8,4 @@ const counterSchema = mongoose.Schema({
   },
 });
 
-counterSchema.static('updateCount', function (name, callback) {
-  return this.findOneAndUpdate({ name }, { $inc: { count: 1 } }, function (a, b, c) {
-    console.log(a, b, c);
-  });
-});
-
 module.exports = mongoose.model('Counter', counterSchema);
